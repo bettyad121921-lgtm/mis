@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HopeHands | Charity Organization</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #1d8068;
+    --dark: #145c4c;
+    --mint: #e9f5ef;
+    --yellow: #f5c75e;
+    --ink: #18332d;
+    --muted: #687b75;
+    --white: #fff;
+    --bg: #fbfcfa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.2;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    border-bottom: 1px solid #e4ece7;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--green);
+}
+
+.logo span {
+    color: var(--ink);
+}
+
+.logo-icon {
+    display: inline-grid;
+    place-items: center;
+    background: var(--green);
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    margin-right: 7px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #52645d;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 30px;
+    background: var(--green);
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #1d806833;
+}
+
+.menu {
+    display: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    padding: 75px 0;
+    background: linear-gradient(120deg, #f0f8f2, #fbfcfa);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.tag {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 500px;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.btn-outline {
+    background: white;
+    color: var(--green);
+    border: 1px solid #dce7e0;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 25px 25px 90px 25px;
+    box-shadow: 0 15px 40px #18332d18;
+}
+
+.hero-stat {
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    background: white;
+    padding: 17px 22px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px #0002;
+}
+
+.hero-stat strong {
+    font-size: 22px;
+    display: block;
+}
+
+.hero-stat small {
+    color: var(--muted);
+}
+
+/* SECTION COMMON */
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+/* ABOUT */
+
+.about-content {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image img {
+    height: 390px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 23px;
+}
+
+.about-text h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.value {
+    background: var(--mint);
+    padding: 18px;
+    border-radius: 15px;
+}
+
+.value h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.value p {
+    font-size: 12px;
+    margin: 0;
+}
+
+/* MISSION AND VISION */
+
+.mission {
+    background: #f0f7f2;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.mission-card {
+    padding: 32px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #18332d0d;
+    transition: .3s;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+}
+
+.mission-card .icon {
+    font-size: 32px;
+}
+
+.mission-card h3 {
+    font-size: 23px;
+    margin: 15px 0;
+}
+
+.mission-card p {
+    color: var(--muted);
+}
+
+/* PROGRAMS */
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.program-card {
+    border-radius: 18px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid #e4ece7;
+    transition: .3s;
+}
+
+.program-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px #18332d15;
+}
+
+.program-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.program-info {
+    padding: 22px;
+}
+
+.program-info h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.program-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.program-info a {
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* EVENTS */
+
+.events {
+    background: #fcf8ed;
+}
+
+.event-list {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+}
+
+.event {
+    background: white;
+    padding: 20px;
+    border-radius: 17px;
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.event-date {
+    background: #fff2d0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 12px;
+    color: #916b17;
+}
+
+.event-date strong {
+    display: block;
+    font-size: 24px;
+}
+
+.event h3 {
+    font-size: 17px;
+}
+
+.event p {
+    font-size: 12px;
+    color: var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">♡</span>Hope<span>Hands</span>
+        </a>
+
+        <button class="menu" id="menu">☰</button>
+
+        <nav id="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#mission">Mission</a>
+            <a href="#programs">Programs</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#donate" class="btn">Donate Now ↗</a>
+
+    </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div>
+            <span class="tag">Together we can make a difference</span>
+
+            <h1>
+                A little help can bring
+                <span>a lot of hope.</span>
+            </h1>
+
+            <p>
+                HopeHands is a community-powered charity
+                working to make education, care, and
+                opportunity available to everyone.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#volunteer" class="btn">
+                    Become a Volunteer →
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    Learn About Us
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1000&q=85"
+                alt="People helping their community"
+            >
+
+            <div class="hero-stat">
+                <strong>1,200+</strong>
+                <small>Lives supported together</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT US -->
+
+<section id="about">
+
+    <div class="container about-content">
+
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=85"
+                alt="Children learning together"
+            >
+        </div>
+
+        <article class="about-text">
+
+            <span class="tag">Who we are</span>
+
+            <h2>Small actions.<br>Lasting impact.</h2>
+
+            <p>
+                HopeHands is a non-profit organization
+                built on compassion, dignity, and the
+                belief that every person deserves the
+                chance to thrive.
+            </p>
+
+            <p>
+                We work alongside local communities to
+                identify needs and create practical,
+                sustainable support for children and families.
+            </p>
+
+            <div class="values">
+
+                <div class="value">
+                    <h3>Our Story</h3>
+                    <p>
+                        Neighbors came together to turn
+                        kindness into meaningful action.
+                    </p>
+                </div>
+
+                <div class="value">
+                    <h3>Our Values</h3>
+                    <p>
+                        Respect, transparency, inclusion,
+                        and care for everyone.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- MISSION AND VISION -->
+
+<section class="mission" id="mission">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span class="tag">Our purpose</span>
+            <h2>Mission & Vision</h2>
+            <p>
+                Stronger communities begin when everyone
+                has the support to move forward.
+            </p>
+        </div>
+
+        <div class="mission-grid">
+
+            <article class="mission-card">
+                <div class="icon">🌱</div>
+                <h3>Our Mission</h3>
+                <p>
+                    To empower underserved communities through
+                    accessible education, essential resources,
+                    and compassionate support that helps
+                    people build brighter futures.
+                </p>
+            </article>
+
+            <article class="mission-card">
+                <div class="icon">🌍</div>
+                <h3>Our Vision</h3>
+                <p>
+                    A world where every child and family can
+                    live with dignity, opportunity, and hope,
+                    regardless of their circumstances.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROGRAMS -->
+
+<section id="programs">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span class="tag">What we do</span>
+            <h2>Our Programs</h2>
+            <p>
+                Community-centered projects designed to meet
+                real needs and create lasting change.
+            </p>
+        </div>
+
+        <div class="program-grid">
+
+            <article class="program-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+                    alt="Students studying"
+                >
+
+                <div class="program-info">
+                    <h3>Education for All</h3>
+                    <p>
+                        School supplies, learning resources,
+                        and mentorship to help children
+                        continue learning.
+                    </p>
+                    <a href="#volunteer">Get involved →</a>
+                </div>
+
+            </article>
+
+            <article class="program-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80"
+                    alt="Food assistance program"
+                >
+
+                <div class="program-info">
+                    <h3>Food & Family Care</h3>
+                    <p>
+                        Supporting families with essential
+                        supplies and community-led food assistance.
+                    </p>
+                    <a href="#donate">Support this program →</a>
+                </div>
+
+            </article>
+
+            <article class="program-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80"
+                    alt="Volunteers working together"
+                >
+
+                <div class="program-info">
+                    <h3>Community Outreach</h3>
+                    <p>
+                        Bringing people together through
+                        local cleanups and neighborhood projects.
+                    </p>
+                    <a href="#events">See our events →</a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- UPCOMING EVENTS -->
+
+<section class="events" id="events">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span class="tag">Be part of the change</span>
+            <h2>Upcoming Events</h2>
+            <p>
+                Meet your community, lend a hand,
+                and make a difference.
+            </p>
+        </div>
+
+        <div class="event-list">
+
+            <article class="event">
+
+                <div class="event-date">
+                    <strong>18</strong>
+                    <span>Nov</span>
+                </div>
+
+                <div>
+                    <h3>Community Food & Care Day</h3>
+                    <p>📍 Community Center · 9:00 AM – 1:00 PM</p>
+                </div>
+
+                <a href="#volunteer" class="btn">Join Event</a>
+
+            </article>
+
+            <article class="event">
+
+                <div class="event-date">
+                    <strong>23</strong>
+                    <span>Nov</span>
+                </div>
+
+                <div>
+                    <h3>Back-to-School Supply Drive</h3>
+                    <p>📍 HopeHands Hub · 10:00 AM – 2:00 PM</p>
+                </div>
+
+                <a href="#volunteer" class="btn">Join Event</a>
+
+            </article>
+
+            <article class="event">
+
+                <div class="event-date">
+                    <strong>30</strong>
+                    <span>Nov</span>
+                </div>
+
+                <div>
+                    <h3>Neighborhood Green Day</h3>
+                    <p>📍 Riverside Park · 8:30 AM – 12:00 PM</p>
+                </div>
+
+                <a href="#volunteer" class="btn">Join Event</a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+</body>
+</html>
